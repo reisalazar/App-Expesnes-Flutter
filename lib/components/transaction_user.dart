@@ -21,10 +21,22 @@ class _TransactionUserState extends State<TransactionUser> {
         id: 't2', title: 'Conta de luz', value: 211.40, date: DateTime.now())
   ];
 
+  _addTransaction(String title, double value) {
+    final newTransaction =
+        Transaction(id: '', title: title, value: value, date: DateTime.now());
+
+    setState(() {
+      _transaction.add(newTransaction);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [TransactionList(_transaction), TransactionForm()],
+      children: <Widget>[
+        TransactionList(_transaction),
+        TransactionForm(),
+      ],
     );
   }
 }
