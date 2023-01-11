@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class Chart extends StatelessWidget {
-  const Chart({super.key, required this.recentTransaction});
+  const Chart(this.recentTransaction, {Key? key}) : super(key: key);
 
   final List<Transaction> recentTransaction;
 
@@ -38,7 +38,9 @@ class Chart extends StatelessWidget {
       elevation: 6,
       margin: const EdgeInsets.all(20),
       child: Row(
-        children: const <Widget>[],
+        children: groupedTransactions.map((tr) {
+          return Text('${tr['day']}: ${tr['day']}');
+        }).toList(),
       ),
     );
   }
