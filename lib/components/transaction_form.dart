@@ -22,7 +22,7 @@ class _TransactionFormState extends State<TransactionForm> {
     if (title.isEmpty || value.isNegative || _selectedDate == null) {
       return;
     }
-    widget.onSubmit(title, value, _selectedDate!);
+    widget.onSubmit(title, value, _selectedDate);
   }
 
   _showDatePicker() {
@@ -72,7 +72,7 @@ class _TransactionFormState extends State<TransactionForm> {
                     child: Text(
                       _selectedDate == null
                           ? 'Nenhuma data selecionada!'
-                          : 'Data Selecionada: ${DateFormat('dd/MM/y').format(_selectedDate!)}',
+                          : 'Data Selecionada: ${DateFormat('dd/MM/y').format(_selectedDate)}',
                     ),
                   ),
                   TextButton(
