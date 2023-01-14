@@ -1,6 +1,5 @@
 import 'package:expenses/components/adaptative_date_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'adaptative_button.dart';
 import 'adaptative_text_field.dart';
 
